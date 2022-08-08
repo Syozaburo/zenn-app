@@ -37,7 +37,15 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy'
   ],
+  axios: {
+    proxy: true
+  },
+  proxy: {
+    '/api/': { target: 'http://localhost:5000', pathRewrite: {'^/api/': '/api/v1'} }
+  },
   /*
   ** Build configuration
   */
