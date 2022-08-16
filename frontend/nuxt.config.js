@@ -1,5 +1,6 @@
 
 export default {
+  ssr: false,
   /*
   ** Headers of the page
   */
@@ -32,6 +33,7 @@ export default {
   ** Nuxt.js dev-modules
   */
   buildModules: [
+    '@nuxtjs/vuetify',
   ],
   /*
   ** Nuxt.js modules
