@@ -2,7 +2,7 @@
   <div v-if="user">
     <p>名前：{{user.name}}</p>
     <AddTodo @submit="addTodo" />
-    <TodoList :todos="todos" />
+    <TodoList :todos="user.todos" /> 
   </div>
 </template>
 
@@ -30,12 +30,13 @@
       console.log("API_KEY:", process.env.API_KEY);
     },
     methods: {
-     async addTodo(title) {
+     async addTodo(todo) {
       //サーバーサイドへリクエストをかける前に実行する処理
-      await axios.post("/api/v1/todos", { title }); 
-        this.todos.push({
-          title
-        });
+     const { data } = await axios.post("/api/v1/todos", { todo });
+         this.$store.dispatch("auth/setUser", {
+        ...this.user,
+        todos: [...this.user.todos, data]
+       });
       },
     },
   };
