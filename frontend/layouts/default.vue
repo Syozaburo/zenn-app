@@ -2,6 +2,7 @@
   <v-app dark>
 
   <div>
+    <Success />
     <Loading />
   </div>
 
@@ -57,7 +58,8 @@
 
 <script>
 
- import Loading from "@/components/Loading"; 
+import Loading from "@/components/Loading"; 
+import Success from "@/components/Success";
 
   export default {
     data() {
@@ -72,7 +74,8 @@
       }
     },
      components: {
-      Loading
+      Loading,
+      Success
     },
     computed: {
       user() {

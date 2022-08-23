@@ -26,9 +26,6 @@
         return this.$store.state.auth.currentUser;
       }
     },
-    created() {
-      console.log("API_KEY:", process.env.API_KEY);
-    },
     methods: {
      async addTodo(todo) {
       //サーバーサイドへリクエストをかける前に実行する処理
