@@ -18,3 +18,9 @@ RUN apt-get update -qq && \
 RUN bundle install
 
 ADD . /app
+RUN mkdir -p tmp/sockets
+RUN mkdir tmp/pids
+
+RUN chmod +x /app/entrypoint.sh
+
+CMD ["/app/entrypoint.sh"]
