@@ -1,5 +1,7 @@
 FROM ruby:2.6.6
 
+ENV RAILS_ENV=production
+
 ENV LANG C.UTF-8
 ENV TZ Asia/Tokyo
 
@@ -17,10 +19,6 @@ RUN apt-get update -qq && \
 
 RUN bundle install
 
-ADD . /app
-RUN mkdir -p tmp/sockets
-RUN mkdir tmp/pids
-
-RUN chmod +x /app/entrypoint.sh
-
-CMD ["/app/entrypoint.sh"]
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod 744 /entrypoint.sh
+CMD ["sh", "/entrypoint.sh"]
