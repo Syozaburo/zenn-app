@@ -1,4 +1,4 @@
-FROM ruby:2.6.6
+FROM ruby:3.0.2
 
 ENV RAILS_ENV=production
 
@@ -19,6 +19,6 @@ RUN apt-get update -qq && \
 
 RUN bundle install
 
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod 744 /entrypoint.sh
-CMD ["sh", "/entrypoint.sh"]
+COPY start.sh /start.sh
+RUN chmod 744 /start.sh
+CMD ["sh", "/start.sh"]
