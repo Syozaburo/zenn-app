@@ -1,7 +1,10 @@
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    # localhost:3000 からのアクセスを許容する
-    origins ['http://localhost:3000']
+    if Rails.env.production?
+      origins ['https://rails-nuxt-app-86e97.web.app']
+    else
+      origins ['http://localhost:3000']
+    end
 
     resource '*',
     headers: :any,
