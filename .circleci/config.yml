@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   test_backend:
     docker:
-      - image: circleci/ruby:2.6.6-stretch-node
+      - image: circleci/ruby:3.0.2
         environment:
           RAILS_ENV: test
           DB_HOST: 127.0.0.1
@@ -73,6 +73,7 @@ jobs:
 
     working_directory: ~/repo
 
+    parallelism: 2
     steps:
       - checkout
       - restore_cache:
