@@ -5,9 +5,9 @@ CircleCi CI/CDとHerokuの経験とNuxt.jsの勉強の為作成しました。
 
 # URL
 https://rails-nuxt-app-86e97.web.app/  
-Email: test@todoapp.com 
+Email: test@todoapp.com  
 password: waPxvad9AfBT  
-passwprdConfirm: waPxvad9AfBT 
+passwprdConfirm: waPxvad9AfBT  
 こちらのアカウントでログインしてください
 
 # 使用技術 
